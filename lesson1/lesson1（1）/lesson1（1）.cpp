@@ -91,6 +91,9 @@ int main() {
 	// 指针的访问
 	cout << "变量d所在的内存地址是" << p << endl;
 	cout << "变量d的值是" << *p << endl;
+	// 使用指针修改值
+	*p = 20;
+	cout << "修改后d的值是" << *p << endl;
 
 	
 	return 0;
