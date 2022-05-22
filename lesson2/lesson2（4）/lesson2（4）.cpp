@@ -4,6 +4,9 @@
 // 运行该项目时一定要将它设为启动项！！！
 using namespace std;
 
+void reset(int& num);
+int minAndMax(int num1, int num2, int num3, int& max);
+
 int main() {
 	// 传引用参数
 	// 意义
@@ -35,7 +38,53 @@ int main() {
 	cout << "修改p1的值后，p1的值是" << p1 << "，p2的值是" << p2 << endl;
 	p2 = &d;  // 修改p2的值，p1的值也会变动
 	cout << "修改p2的值后，p1的值是" << p1 << "，p2的值是" << p2 << endl;
+	// 见reset函数
+
+	cout << '\n'
+		<< "------------------------------------------------------------"
+		<< endl << '\n';
+
+	int num = 10;
+	reset(num);
+	cout << "num * 2 = " << num << endl;
+
+	cout << '\n'
+		<< "------------------------------------------------------------"
+		<< endl << '\n';
+
+	int maxNum, minNum;
+	minNum = minAndMax(10, 20, 30, maxNum);// 使用maxNum接受最大值
+	cout << "10，20，30中" << minNum << "最小，" << maxNum << "最大" << endl;
+	// 输出结果：10，20，30中10最小，30最大
+	// 逻辑讲解：
+	// 函数最后返回min值，我们使用minNum接受了最小值，我们再使用引用参数maxNum，与函数内的参数
+	// temp2使用共同地址，也就是将temp2的值赋值给了maxNum
 	
 	
     return 0;
+}
+
+void reset(int &num) {
+	num *= 2;
+	// 将引用变量作为参数，函数使用的是原始数据，而并非副本,
+	// 对形参的修改相当于对实参值的修改
+}
+// 传引用参数的作用：
+// 1.当某种类型不支持拷贝操作，或是需要拷贝的对象太大时，我们可以通过引用形参来访问对象
+// 2.当函数需要同时返回多个值时，可以使用引用形参来处理
+
+// 例我想用一个函数传递三个参数，可以使用引用参数，如下：
+int minAndMax(int num1, int num2, int num3, int& max/* 这个就是引用参数 */) {
+	int temp1, temp2;    // 定义两个变量，负责存储最大值和最小值
+	temp1 = num1 < num2 ? num2 : num1;
+	temp1 = temp1 < num3 ? num3 : temp1;  // temp1存储最大值
+
+	temp2 = num1 > num2 ? num2 : num1;
+	temp2 = temp2 > num3 ? num3 : temp2;  // temp2存储最小值
+
+	max = temp1;
+	return temp2;
+
+	// 函数返回值为int类型，返回的是三个数中的最小值
+	// 我们定义了一个引用类型的参数，通过这个参数修改maxNum的值，获取最大值
 }
