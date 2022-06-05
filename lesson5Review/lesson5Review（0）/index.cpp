@@ -15,7 +15,6 @@ int main() {
 	cout << "ÇëÊäÈë²Ù×÷£º";
 
 	while (cin >> input) {
-
 		cout << '\n';
 		
 		switch (input) {
@@ -54,7 +53,7 @@ int main() {
 		default:
 			break;
 		}
-		
+
 		if (input == 6) {
 			break;
 		}
