@@ -15,10 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="lesson5（2）.cpp">
+    <ClCompile Include="lesson5Review（0）.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="student.cpp">
+    <ClCompile Include="Medicine.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="index.cpp">
@@ -26,7 +26,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Student.h">
+    <ClInclude Include="Medicine.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

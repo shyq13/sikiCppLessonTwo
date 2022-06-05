@@ -26,3 +26,10 @@ bool Student::pass(const Student& s) {
 		return false;
 	}
 }
+
+void printScore(Student& s)
+{
+	cout << "语文成绩：" << s.chinese_ << endl;
+	cout << "数学成绩：" << s.math_ << endl;
+	cout << "英语成绩：" << s.english_ << endl;
+}
